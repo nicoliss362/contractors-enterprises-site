@@ -892,48 +892,55 @@
         <div class="contact-card">
           <h3>Quick Contact Form</h3>
           <!-- Front-end only – wire up to email/CRM as needed -->
-          <form>
-            <div class="contact-field">
-              <label for="name">Name</label>
-              <input id="name" type="text" placeholder="Your full name" />
-            </div>
-            <div class="contact-field">
-              <label for="company">Organization / Company</label>
-              <input id="company" type="text" placeholder="City, school, or business name" />
-            </div>
-            <div class="contact-field">
-              <label for="email">Email</label>
-              <input id="email" type="email" placeholder="you@example.com" />
-            </div>
-            <div class="contact-field">
-              <label for="phone">Phone</label>
-              <input id="phone" type="tel" placeholder="(###) ###-####" />
-            </div>
-            <div class="contact-field">
-              <label for="service-type">Services Needed</label>
-              <select id="service-type">
-                <option value="">Select an option</option>
-                <option>Ongoing janitorial services</option>
-                <option>Strip &amp; wax floor care</option>
-                <option>Carpet cleaning program</option>
-                <option>One-time or deep cleaning</option>
-                <option>Other / not sure yet</option>
-              </select>
-            </div>
-            <div class="contact-field">
-              <label for="message">Tell us about your buildings</label>
-              <textarea
-                id="message"
-                placeholder="Approx. square footage, number of buildings, schedule, and any special requirements."
-              ></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width:100%;margin-top:0.25rem;">
-              Send Message
-            </button>
-            <p class="contact-meta">
-              This form is a template. Your web developer can connect it to your preferred email or form service.
-            </p>
-          </form>
+          <form action="https://formspree.io/f/xovyjgkj" method="POST">
+  <div class="contact-field">
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" placeholder="Your full name" required />
+  </div>
+  <div class="contact-field">
+    <label for="company">Organization / Company</label>
+    <input id="company" name="company" type="text" placeholder="City, school, or business name" />
+  </div>
+  <div class="contact-field">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="you@example.com" required />
+  </div>
+  <div class="contact-field">
+    <label for="phone">Phone</label>
+    <input id="phone" name="phone" type="tel" placeholder="(###) ###-####" />
+  </div>
+  <div class="contact-field">
+    <label for="service-type">Services Needed</label>
+    <select id="service-type" name="service_type">
+      <option value="">Select an option</option>
+      <option>Ongoing janitorial services</option>
+      <option>Strip &amp; wax floor care</option>
+      <option>Carpet cleaning program</option>
+      <option>One-time or deep cleaning</option>
+      <option>Other / not sure yet</option>
+    </select>
+  </div>
+  <div class="contact-field">
+    <label for="message">Tell us about your buildings</label>
+    <textarea
+      id="message"
+      name="message"
+      placeholder="Approx. square footage, number of buildings, schedule, and any special requirements."
+      required
+    ></textarea>
+  </div>
+
+  <!-- Optional: customize email subject -->
+  <input type="hidden" name="_subject" value="New cleaning inquiry from website" />
+
+  <button type="submit" class="btn btn-primary" style="width:100%;margin-top:0.25rem;">
+    Send Message
+  </button>
+  <p class="contact-meta">
+    After you submit, you'll see a confirmation page and your message will be emailed directly to us.
+  </p>
+</form>
+
         </div>
 
         <div class="contact-card">
