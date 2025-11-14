@@ -6,53 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Contractors Enterprises Inc. provides professional janitorial, floor care, and facility cleaning services for government, education, and commercial clients across the Southeast."
+    content="Contractors Enterprises Inc. provides professional janitorial, floor care, and facility cleaning services for government, education, and commercial clients."
   />
   <style>
     :root {
-      --primary: #004b7a;
-      --primary-light: #0d6ea8;
-      --accent: #18a34a;
-      --bg: #f5f7fa;
-      --text: #1f2933;
+      --primary: #0052b4;       /* logo blue */
+      --primary-soft: #e6f0ff;
+      --accent: #16a34a;
+      --bg: #f5f6f8;
+      --text: #111827;
       --muted: #6b7280;
+      --border: #d1d5db;
       --white: #ffffff;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
       --radius-lg: 18px;
-      --radius-pill: 999px;
+      --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.12);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
+    a { color: inherit; text-decoration: none; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* Layout */
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(245, 247, 250, 0.9);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(209, 213, 219, 0.8);
     }
 
     .nav {
@@ -68,31 +53,23 @@
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.9rem;
     }
 
-    .logo-circle {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: radial-gradient(circle at 30% 30%, #6ee7b7, #0369a1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-weight: 700;
-      font-size: 1.15rem;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
+    .logo-img {
+      height: 52px;
+      width: auto;
+      display: block;
     }
 
-    .brand-text-main {
+    .brand-main {
       font-weight: 700;
-      letter-spacing: 0.03em;
       font-size: 1.05rem;
+      letter-spacing: 0.01em;
     }
 
-    .brand-text-sub {
-      font-size: 0.76rem;
+    .brand-sub {
+      font-size: 0.8rem;
       color: var(--muted);
     }
 
@@ -100,85 +77,87 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
     }
 
     .nav-links a {
-      padding: 0.25rem 0.4rem;
+      padding: 0.3rem 0.5rem;
       border-radius: 999px;
-      color: var(--muted);
+      color: #4b5563;
     }
 
     .nav-links a:hover {
+      background: var(--primary-soft);
       color: var(--primary);
-      background: rgba(191, 219, 254, 0.4);
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: var(--radius-pill);
-      border: none;
+      border-radius: 999px;
+      border: 1px solid transparent;
       cursor: pointer;
       font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      padding: 0.55rem 1.2rem;
       transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
       white-space: nowrap;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      background: var(--primary);
       color: var(--white);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.32);
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);
+      border-color: var(--primary);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
+      box-shadow: 0 16px 36px rgba(37, 99, 235, 0.45);
     }
 
     .btn-ghost {
-      background: rgba(255, 255, 255, 0.9);
+      background: var(--white);
       color: var(--primary);
-      border: 1px solid rgba(148, 163, 184, 0.6);
+      border-color: var(--border);
     }
 
     .btn-ghost:hover {
-      background: #e5f0ff;
+      background: var(--primary-soft);
+      border-color: var(--primary);
     }
 
     main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 1.25rem 1.25rem 3rem;
+      padding: 1.5rem 1.25rem 3rem;
     }
 
-    /* Hero */
+    /* HERO */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 2.5rem;
       align-items: center;
-      padding: 2.5rem 0 1.5rem;
+      padding: 2.25rem 0 1.5rem;
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
       padding: 0.2rem 0.75rem;
       border-radius: 999px;
-      background: rgba(22, 163, 74, 0.07);
-      color: #15803d;
+      background: #e5f3ff;
+      color: #1d4ed8;
       font-size: 0.8rem;
       font-weight: 600;
     }
 
     .hero-badge-dot {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border-radius: 999px;
       background: #22c55e;
     }
@@ -190,9 +169,7 @@
       letter-spacing: -0.02em;
     }
 
-    .hero h1 span {
-      color: var(--primary);
-    }
+    .hero h1 span { color: var(--primary); }
 
     .hero-tagline {
       font-size: 0.98rem;
@@ -204,7 +181,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      margin: 1.3rem 0 0.4rem;
+      margin: 1.3rem 0 0.3rem;
     }
 
     .hero-meta {
@@ -216,115 +193,96 @@
       color: var(--muted);
     }
 
-    .hero-meta-item span {
-      display: block;
-    }
-
     .hero-meta-label {
       text-transform: uppercase;
       letter-spacing: 0.08em;
       font-weight: 600;
       font-size: 0.7rem;
-      color: #94a3b8;
+      color: #9ca3af;
     }
 
     .hero-meta-value {
       font-weight: 600;
       color: var(--text);
-      margin-top: 0.1rem;
+      margin-top: 0.15rem;
     }
 
     .hero-card {
-      background: radial-gradient(circle at 0 0, #e0f2fe, #eff6ff);
-      border-radius: 26px;
-      padding: 1.6rem 1.7rem;
+      background: var(--white);
+      border-radius: 24px;
+      padding: 1.5rem 1.6rem;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      position: relative;
-      overflow: hidden;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      font-size: 0.86rem;
     }
 
     .hero-card-header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       gap: 1rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.1rem;
     }
 
     .hero-card-title {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       font-weight: 600;
-      color: #0f172a;
     }
 
     .hero-chip {
       font-size: 0.75rem;
-      padding: 0.25rem 0.6rem;
+      padding: 0.25rem 0.55rem;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.06);
-      color: #0f172a;
+      background: var(--primary-soft);
+      color: var(--primary);
+      border: 1px solid rgba(37, 99, 235, 0.4);
     }
 
     .hero-metrics {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.8rem;
-      margin-bottom: 1.2rem;
-      font-size: 0.8rem;
+      margin-bottom: 1rem;
     }
 
     .metric-card {
-      background: rgba(255, 255, 255, 0.85);
       border-radius: 14px;
+      border: 1px solid var(--border);
       padding: 0.65rem 0.75rem;
-      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: #f9fafb;
     }
 
     .metric-label {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: #94a3b8;
+      color: #9ca3af;
       margin-bottom: 0.15rem;
     }
 
     .metric-value {
       font-weight: 700;
       color: var(--primary);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
     }
 
     .metric-sub {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--muted);
     }
 
     .hero-note {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--muted);
-      margin-top: 0.6rem;
-    }
-
-    .hero-accent-bar {
-      position: absolute;
-      inset-inline: auto 0.9rem;
-      bottom: 0.9rem;
-      height: 4px;
-      width: 130px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #22c55e, #0ea5e9);
-      opacity: 0.9;
+      margin-top: 0.4rem;
     }
 
     /* Sections */
-    section {
-      margin-top: 2.5rem;
-    }
+    section { margin-top: 2.5rem; }
 
     h2.section-title {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.35rem;
+      margin-bottom: 0.4rem;
       letter-spacing: -0.01em;
     }
 
@@ -332,10 +290,10 @@
       font-size: 0.9rem;
       color: var(--muted);
       max-width: 34rem;
-      margin-bottom: 1.3rem;
+      margin-bottom: 1.1rem;
     }
 
-    /* Services */
+    /* Cards & grids */
     .service-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -345,36 +303,20 @@
     .card {
       background: var(--white);
       border-radius: var(--radius-lg);
-      padding: 1.1rem 1rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      padding: 1rem 0.95rem 1.05rem;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.05);
       font-size: 0.86rem;
     }
 
     .card h3 {
-      font-size: 1rem;
+      font-size: 0.98rem;
       margin-bottom: 0.3rem;
     }
 
-    .chip-row {
-      margin-bottom: 0.35rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
-    }
-
-    .chip {
-      font-size: 0.7rem;
-      padding: 0.15rem 0.5rem;
-      border-radius: 999px;
-      background: rgba(219, 234, 254, 0.8);
-      color: #1d4ed8;
-      border: 1px solid rgba(129, 140, 248, 0.5);
-    }
-
     .card ul {
-      margin: 0.4rem 0 0;
-      padding-left: 1.05rem;
+      margin-top: 0.35rem;
+      padding-left: 1rem;
       color: var(--muted);
     }
 
@@ -382,51 +324,66 @@
       margin-bottom: 0.2rem;
     }
 
-    /* Why Choose Us */
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.15rem;
+    }
+
+    .chip {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      border: 1px solid rgba(37, 99, 235, 0.35);
+    }
+
+    /* Why us */
     .why-grid {
       display: grid;
       grid-template-columns: 1.1fr 1fr;
-      gap: 1.6rem;
+      gap: 1.7rem;
       align-items: flex-start;
     }
 
     .pill-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-top: 0.6rem;
+      gap: 0.4rem;
+      margin-top: 0.55rem;
     }
 
     .pill {
       font-size: 0.75rem;
-      padding: 0.25rem 0.65rem;
+      padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      background: rgba(148, 163, 184, 0.18);
+      background: #e5e7eb;
       color: #374151;
     }
 
     .check-list {
-      margin-top: 0.75rem;
-      font-size: 0.87rem;
+      margin-top: 0.8rem;
+      font-size: 0.86rem;
       color: var(--muted);
     }
 
     .check-item {
       display: flex;
       gap: 0.45rem;
-      align-items: flex-start;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.4rem;
     }
 
     .check-icon {
       width: 1rem;
       height: 1rem;
       border-radius: 999px;
-      background: rgba(34, 197, 94, 0.18);
+      background: rgba(22, 163, 74, 0.14);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       color: #15803d;
       margin-top: 0.1rem;
     }
@@ -435,26 +392,21 @@
       background: var(--white);
       border-radius: 22px;
       padding: 1rem 1.1rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border: 1px solid rgba(209, 213, 219, 0.95);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
       font-size: 0.86rem;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.09);
     }
 
     .why-panel-row {
       display: flex;
       justify-content: space-between;
       gap: 0.75rem;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.7rem;
     }
 
-    .why-panel-label {
+    .why-label {
       font-size: 0.8rem;
-      color: #64748b;
-    }
-
-    .why-panel-value {
-      font-weight: 600;
-      color: var(--primary);
+      color: #6b7280;
     }
 
     /* Contact */
@@ -468,14 +420,14 @@
       background: var(--white);
       border-radius: 22px;
       padding: 1.15rem 1.1rem 1.3rem;
-      border: 1px solid rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(209, 213, 219, 0.9);
       box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
       font-size: 0.86rem;
     }
 
     .contact-card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
+      font-size: 0.98rem;
+      margin-bottom: 0.35rem;
     }
 
     .contact-field {
@@ -494,7 +446,7 @@
     .contact-field textarea,
     .contact-field select {
       border-radius: 10px;
-      border: 1px solid rgba(148, 163, 184, 0.9);
+      border: 1px solid rgba(209, 213, 219, 0.9);
       padding: 0.45rem 0.55rem;
       font-size: 0.85rem;
       font-family: inherit;
@@ -507,7 +459,7 @@
     .contact-field select:focus {
       border-color: var(--primary);
       background: #ffffff;
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
     }
 
     .contact-field textarea {
@@ -521,9 +473,8 @@
       margin-top: 0.4rem;
     }
 
-    /* Footer */
     footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      border-top: 1px solid rgba(209, 213, 219, 0.9);
       margin-top: 2.4rem;
       padding: 1rem 1.25rem 1.5rem;
       font-size: 0.8rem;
@@ -557,21 +508,17 @@
       .hero {
         grid-template-columns: minmax(0, 1fr);
       }
-      .hero-card {
-        order: -1;
-      }
+      .hero-card { order: -1; }
       .service-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      .why-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      .why-grid,
       .contact-grid {
         grid-template-columns: minmax(0, 1fr);
       }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 720px) {
       .nav {
         flex-direction: column;
         align-items: flex-start;
@@ -590,7 +537,7 @@
 
     @media (max-width: 480px) {
       .hero {
-        padding-top: 1.7rem;
+        padding-top: 1.6rem;
       }
       .hero-actions {
         flex-direction: column;
@@ -599,6 +546,9 @@
       .hero-meta {
         gap: 0.9rem;
       }
+      .logo-img {
+        height: 44px;
+      }
     }
   </style>
 </head>
@@ -606,10 +556,11 @@
   <header>
     <nav class="nav">
       <div class="nav-left">
-        <div class="logo-circle">CE</div>
+        <!-- Replace logo-ce.png with your actual logo file name if different -->
+        <img src="logo-ce.png" alt="Contractors Enterprises Inc. logo" class="logo-img" />
         <div>
-          <div class="brand-text-main">Contractors Enterprises Inc.</div>
-          <div class="brand-text-sub">Janitorial • Floor Care • Facility Services</div>
+          <div class="brand-main">Contractors Enterprises Inc.</div>
+          <div class="brand-sub">Quality. Reliability. Expertise.</div>
         </div>
       </div>
       <div class="nav-links">
@@ -633,19 +584,19 @@
           26+ years of janitorial experience
         </div>
         <h1>
-          Professional <span>Janitorial & Floor Care</span><br />
-          for Facilities that Must Stay Clean.
+          Professional <span>Janitorial &amp; Floor Care</span><br />
+          for public and commercial facilities.
         </h1>
         <p class="hero-tagline">
           Contractors Enterprises Inc. delivers reliable, detail-driven cleaning for city
-          departments, schools, colleges, and commercial sites across the Southeast.
+          departments, schools, colleges, and commercial sites.  
           <br />
           <strong>“My work may be dirty, but my reputation is clean.”</strong>
         </p>
 
         <div class="hero-actions">
           <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
-            Get a Free Site Walk-Through
+            Schedule a Site Walk-Through
           </button>
           <button class="btn btn-ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'});">
             View Services
@@ -653,142 +604,146 @@
         </div>
 
         <div class="hero-meta">
-          <div class="hero-meta-item">
-            <span class="hero-meta-label">Headquartered</span>
-            <span class="hero-meta-value">Tallahassee, Florida</span>
+          <div>
+            <div class="hero-meta-label">Headquartered</div>
+            <div class="hero-meta-value">Tallahassee, Florida</div>
           </div>
-          <div class="hero-meta-item">
-            <span class="hero-meta-label">Service Focus</span>
-            <span class="hero-meta-value">Government • Education • Commercial</span>
+          <div>
+            <div class="hero-meta-label">Client Focus</div>
+            <div class="hero-meta-value">Government • Education • Commercial</div>
           </div>
-          <div class="hero-meta-item">
-            <span class="hero-meta-label">Certifications</span>
-            <span class="hero-meta-value">IJCSA Certified</span>
+          <div>
+            <div class="hero-meta-label">Certification</div>
+            <div class="hero-meta-value">IJCSA Certified</div>
           </div>
         </div>
       </div>
 
-      <aside class="hero-card" aria-label="Key contract metrics">
+      <aside class="hero-card" aria-label="Company snapshot">
         <div class="hero-card-header">
           <div>
-            <div class="hero-card-title">Contract-Ready Vendor</div>
-            <div style="font-size:0.78rem;color:#64748b;">Fully insured • E-Verify • OSHA-aware</div>
+            <div class="hero-card-title">Contract-Ready Cleaning Partner</div>
+            <div style="font-size:0.8rem;color:#6b7280;">
+              Fully insured • E-Verify • Background-checked staff
+            </div>
           </div>
-          <div class="hero-chip">Sam.gov &amp; SCC registered</div>
+          <div class="hero-chip">Government &amp; education experience</div>
         </div>
 
         <div class="hero-metrics">
           <div class="metric-card">
             <div class="metric-label">Core Services</div>
-            <div class="metric-value">Janitorial + Floor Care</div>
-            <div class="metric-sub">Daily, deep, strip &amp; wax, carpet</div>
+            <div class="metric-value">Janitorial &amp; Floor Care</div>
+            <div class="metric-sub">Daily service, strip &amp; wax, carpets</div>
           </div>
           <div class="metric-card">
             <div class="metric-label">Service Model</div>
             <div class="metric-value">Staffed &amp; Supervised</div>
-            <div class="metric-sub">On-site working supervision</div>
+            <div class="metric-sub">Hands-on owner oversight</div>
           </div>
           <div class="metric-card">
-            <div class="metric-label">Client Types</div>
-            <div class="metric-sub">State &amp; local agencies, colleges, K-12, office parks, and more.</div>
+            <div class="metric-label">Typical Facilities</div>
+            <div class="metric-sub">
+              City/county buildings, admin offices, campuses, and more.
+            </div>
           </div>
           <div class="metric-card">
             <div class="metric-label">Coverage</div>
-            <div class="metric-sub">Florida • Georgia • South Carolina • Surrounding region by request.</div>
+            <div class="metric-sub">
+              Florida • Georgia • South Carolina • Nearby regions by request.
+            </div>
           </div>
         </div>
 
         <p class="hero-note">
           We build long-term contracts through consistent quality, clear communication,
-          and reliable staffing.
+          and dependable staffing.
         </p>
-
-        <div class="hero-accent-bar"></div>
       </aside>
     </section>
 
     <!-- SERVICES -->
     <section id="services">
-      <h2 class="section-title">Core Cleaning & Floor Care Services</h2>
+      <h2 class="section-title">Janitorial &amp; Floor Care Services</h2>
       <p class="section-intro">
-        We design a custom scope around your buildings, schedule, and budget. Below is a sample of
-        what we deliver for municipal, educational, and commercial facilities.
+        We tailor our scope to your buildings, schedule, and compliance requirements. Below is a
+        sample of what we provide for municipal, educational, and commercial facilities.
       </p>
 
       <div class="service-grid">
         <div class="card">
           <h3>Daily Janitorial</h3>
           <div class="chip-row">
-            <span class="chip">Offices &amp; Admin</span>
+            <span class="chip">Offices &amp; admin areas</span>
             <span class="chip">Restrooms</span>
           </div>
           <ul>
-            <li>Trash collection &amp; recycling service</li>
+            <li>Trash collection &amp; recycling</li>
             <li>Restroom cleaning &amp; disinfection</li>
             <li>Breakroom &amp; kitchen cleaning</li>
-            <li>Dusting, high/low touch-points</li>
-            <li>Spot mopping &amp; vacuuming</li>
+            <li>Dusting, touchpoint disinfection</li>
+            <li>Vacuuming and spot mopping</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Floor Care Programs</h3>
           <div class="chip-row">
-            <span class="chip">Strip &amp; Wax</span>
-            <span class="chip">Machine Scrub</span>
+            <span class="chip">Strip &amp; wax</span>
+            <span class="chip">Machine scrub</span>
           </div>
           <ul>
-            <li>VCT/Vinyl strip, seal, wax, &amp; buff</li>
-            <li>Auto-scrubbing for high-traffic areas</li>
-            <li>Entryway mat maintenance</li>
-            <li>Slip-resistant care &amp; safety focus</li>
+            <li>VCT/vinyl strip, seal, wax, and burnish</li>
+            <li>Auto-scrubbing for high-traffic corridors</li>
+            <li>Entry mat care and maintenance</li>
+            <li>Slip-resistant products and safety focus</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Carpet &amp; Soft Surfaces</h3>
           <div class="chip-row">
-            <span class="chip">Quarterly or As-Needed</span>
+            <span class="chip">Quarterly or as needed</span>
           </div>
           <ul>
-            <li>Hot water extraction carpet cleaning</li>
-            <li>Spot treatment for spills &amp; stains</li>
-            <li>Upholstery &amp; fabric partition care</li>
+            <li>Hot-water extraction carpet cleaning</li>
+            <li>Spot treatment for spills and stains</li>
+            <li>Upholstery and fabric partition care</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Scheduled Deep Cleans</h3>
+          <h3>Deep Cleaning Programs</h3>
           <div class="chip-row">
-            <span class="chip">Breaks &amp; Shutdowns</span>
+            <span class="chip">Breaks &amp; shutdowns</span>
           </div>
           <ul>
-            <li>Top-to-bottom deep cleaning</li>
+            <li>Top-to-bottom detailed cleans</li>
             <li>Baseboards, vents, and high dusting</li>
-            <li>Interior glass &amp; detail work</li>
+            <li>Interior glass and detail work</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Green Cleaning</h3>
           <div class="chip-row">
-            <span class="chip">Eco-Focused</span>
+            <span class="chip">Eco-focused</span>
           </div>
           <ul>
             <li>Environmentally preferred chemicals</li>
             <li>Recycling-friendly workflows</li>
-            <li>Reduced VOCs &amp; fragrance sensitivity</li>
+            <li>Low-odor, low-VOC solutions where possible</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Emergency &amp; Event Support</h3>
           <div class="chip-row">
-            <span class="chip">Short-Notice</span>
+            <span class="chip">Short notice</span>
           </div>
           <ul>
-            <li>After-hours response for spills &amp; incidents</li>
-            <li>Special event set-up &amp; post-event cleaning</li>
+            <li>After-hours spill and incident response</li>
+            <li>Special event pre- and post-cleaning</li>
           </ul>
         </div>
       </div>
@@ -796,48 +751,47 @@
 
     <!-- WHY US -->
     <section id="why">
-      <h2 class="section-title">Why Contractors Enterprises Inc.?</h2>
+      <h2 class="section-title">Why Work With Contractors Enterprises Inc.?</h2>
       <p class="section-intro">
-        We’re a hands-on, owner-led janitorial company built around accountability, communication,
-        and delivering exactly what’s in the scope—every visit.
+        We are a hands-on, owner-led janitorial company focused on accountability, communication,
+        and consistent delivery of what’s in the scope—every visit.
       </p>
 
       <div class="why-grid">
         <div>
           <p style="font-size:0.9rem;">
-            You’re not just buying mops and chemicals—you’re trusting us with your buildings,
-            staff, and visitors. That’s why our model is built on:
+            You’re trusting us with your facilities, your staff, and the public. Our operations model
+            is built around:
           </p>
 
           <div class="pill-list">
             <span class="pill">Owner-level oversight</span>
             <span class="pill">Site-specific training</span>
             <span class="pill">Documented checklists</span>
-            <span class="pill">Photo &amp; logbook verification</span>
-            <span class="pill">Flexible scheduling</span>
-            <span class="pill">Responsive communication</span>
+            <span class="pill">Regular quality inspections</span>
+            <span class="pill">Clear communication</span>
           </div>
 
           <div class="check-list">
             <div class="check-item">
               <div class="check-icon">✓</div>
               <div>
-                <strong>Government &amp; education experience.</strong> We understand background
-                checks, security, scope compliance, and inspection-driven environments.
+                <strong>Government &amp; education experience.</strong>
+                Familiar with background checks, secure sites, and inspection-driven environments.
               </div>
             </div>
             <div class="check-item">
               <div class="check-icon">✓</div>
               <div>
-                <strong>Staffing that matches your buildings.</strong> We create site-specific
-                staffing plans and floor schedules so nothing is left to chance.
+                <strong>Right-sized staffing.</strong>
+                We create site-specific staffing and floor schedules so critical areas are never missed.
               </div>
             </div>
             <div class="check-item">
               <div class="check-icon">✓</div>
               <div>
-                <strong>Transparent communication.</strong> You always know who your point of
-                contact is, how to reach us, and what’s scheduled each week.
+                <strong>Transparent communication.</strong>
+                You have a clear point of contact, scheduled walk-throughs, and fast response to issues.
               </div>
             </div>
           </div>
@@ -846,30 +800,30 @@
         <aside class="why-panel">
           <div class="why-panel-row">
             <div>
-              <div class="why-panel-label">Head Office</div>
-              <div class="why-panel-value">Tallahassee, FL</div>
-              <div style="font-size:0.8rem;color:#64748b;">
+              <div class="why-label">Head Office</div>
+              <div style="font-weight:600;">Tallahassee, FL</div>
+              <div style="font-size:0.85rem;color:#4b5563;margin-top:0.15rem;">
                 1903 High Road<br />
                 Phone: (850) 251-0677<br />
                 Email: nicoliss_johnson62@yahoo.com
               </div>
             </div>
             <div>
-              <div class="why-panel-label">Legal &amp; Compliance</div>
-              <div style="font-size:0.8rem;color:#64748b;">
+              <div class="why-label">Compliance Snapshot</div>
+              <div style="font-size:0.85rem;color:#4b5563;margin-top:0.15rem;">
                 • IJCSA certified<br />
-                • E-Verify registered<br />
+                • E-Verify participant<br />
                 • Fully insured &amp; bonded<br />
               </div>
             </div>
           </div>
 
-          <hr style="border:none;border-top:1px dashed rgba(148,163,184,0.7);margin:0.55rem 0;" />
+          <hr style="border:none;border-top:1px dashed rgba(209,213,219,0.9);margin:0.6rem 0;" />
 
           <div class="why-panel-row">
             <div>
-              <div class="why-panel-label">Typical Contract Types</div>
-              <div style="font-size:0.8rem;color:#4b5563;">
+              <div class="why-label">Typical Contracts</div>
+              <div style="font-size:0.85rem;color:#4b5563;margin-top:0.15rem;">
                 City &amp; county facilities<br />
                 State agencies &amp; DMVs<br />
                 Colleges &amp; schools<br />
@@ -877,9 +831,9 @@
               </div>
             </div>
             <div>
-              <div class="why-panel-label">How We Start</div>
-              <div style="font-size:0.8rem;color:#4b5563;">
-                1. Discovery call<br />
+              <div class="why-label">Engagement Process</div>
+              <div style="font-size:0.85rem;color:#4b5563;margin-top:0.15rem;">
+                1. Intro call<br />
                 2. Site walk-through<br />
                 3. Written scope &amp; quote<br />
                 4. Transition &amp; onboarding
@@ -892,26 +846,26 @@
 
     <!-- INDUSTRIES -->
     <section id="industries">
-      <h2 class="section-title">Industries & Facility Types We Serve</h2>
+      <h2 class="section-title">Industries &amp; Facility Types</h2>
       <p class="section-intro">
-        Every facility is unique. We adapt staffing, products, and workflows to fit your building
-        types, traffic levels, and security needs.
+        Every building is different. We adjust products, staffing, and workflows to fit your facility type,
+        traffic, and security needs.
       </p>
 
       <div class="service-grid">
         <div class="card">
           <h3>Government &amp; Municipal</h3>
           <ul>
-            <li>City &amp; county office complexes</li>
+            <li>City and county admin buildings</li>
             <li>Public works &amp; sanitation facilities</li>
-            <li>DMV &amp; administrative centers</li>
+            <li>DMV &amp; customer service centers</li>
           </ul>
         </div>
         <div class="card">
           <h3>Education &amp; Training Sites</h3>
           <ul>
-            <li>Colleges &amp; universities</li>
-            <li>Satellite campuses &amp; centers</li>
+            <li>Colleges and universities</li>
+            <li>Satellite and vocational campuses</li>
             <li>Training &amp; testing centers</li>
           </ul>
         </div>
@@ -919,8 +873,8 @@
           <h3>Corporate &amp; Office</h3>
           <ul>
             <li>Multi-tenant office buildings</li>
-            <li>Professional suites</li>
-            <li>Call centers &amp; admin hubs</li>
+            <li>Professional suites and call centers</li>
+            <li>Back-office and admin hubs</li>
           </ul>
         </div>
       </div>
@@ -928,16 +882,16 @@
 
     <!-- CONTACT -->
     <section id="contact">
-      <h2 class="section-title">Request a Quote or Site Walk-Through</h2>
+      <h2 class="section-title">Request a Quote or Site Visit</h2>
       <p class="section-intro">
-        Share a few details about your buildings and we’ll respond promptly with next steps.
-        For urgent needs, you can also call us directly at <strong>(850) 251-0677</strong>.
+        Share a few details about your facilities and we’ll follow up with next steps.
+        For urgent needs, please call <strong>(850) 251-0677</strong>.
       </p>
 
       <div class="contact-grid">
         <div class="contact-card">
           <h3>Quick Contact Form</h3>
-          <!-- This form is front-end only; hook it to email or a CRM as needed -->
+          <!-- Front-end only – wire up to email/CRM as needed -->
           <form>
             <div class="contact-field">
               <label for="name">Name</label>
@@ -977,16 +931,15 @@
               Send Message
             </button>
             <p class="contact-meta">
-              This form is a template. Your web developer can connect it to your preferred email or CRM.
+              This form is a template. Your web developer can connect it to your preferred email or form service.
             </p>
           </form>
         </div>
 
         <div class="contact-card">
-          <h3>Direct Contact</h3>
+          <h3>Direct Contact Details</h3>
           <p>
-            Prefer to talk through your needs live? Reach out and we’ll coordinate a time to walk your
-            site and build a tailored scope of work.
+            Prefer to speak directly? Reach out and we’ll coordinate a site walk-through and a tailored scope of work.
           </p>
           <div style="margin-top:0.7rem;font-size:0.88rem;">
             <p><strong>Contractors Enterprises Inc.</strong></p>
@@ -1019,8 +972,8 @@
   </footer>
 
   <script>
-    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
